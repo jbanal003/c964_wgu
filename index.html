@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Workout Recommendation</title>
+</head>
+<body>
+        <div class="container">
+        <h1>Workout Recommendation Prediction</h1>
+        <form action="/predict" method="post">
+
+            <label for="age">Age: </label>
+            <input type="number" name="age" id="age" min="14" max="85" required>
+
+            <label for="gender">Gender (1 = Women, 2 = Men): </label>
+            <input type="number" name="gender" id="gender" min="1" max="2">
+
+            <label for="weight">Weight (kg): </label>   
+            <input type="number" name="weight" id="weight" min="30" max="500" step="0.1" >
+
+            <label for="height">Height (m): </label>
+            <input type="number" name="height" id="height" min="1.0" max="3.0" step="0.01">
+
+            <label for="max_bpm">Max_BPM (optional): </label>
+            <input type="number" name="max_bpm" id="max_bpm" min="50" max="220">
+
+            <label for="avg_bpm">Avg_BPM (optional): </label>
+            <input type="number" name="avg_bpm" id="avg_bpm" min="70" max="220">
+
+            <label for="fat_percent">Fat % (optional): </label>
+            <input type="number" name="fat_percent" id="fat_percent" min="8" max="50" step="0.1">
+
+            <label for="bmi">BMI (optional): </label>
+            <input type="number" name="bmi" id="bmi" min="10.5" max="35" step="0.1">
+
+            <button type="submit">Predict</button>
+        </form>
+    
+        {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    
+        </div>
+</body>
+</html>
