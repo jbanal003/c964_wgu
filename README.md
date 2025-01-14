@@ -1,4 +1,5 @@
 # C964 - Computer Science Capstone
+# Design and Development
 
 #### I. Design and develop your fully functional data product that addresses your identified business problem or organizational need from part (A). Include each of the following attributes, as they are the minimum required elements for the product: <br>
 
